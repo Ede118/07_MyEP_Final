@@ -11,7 +11,7 @@ typedef enum
 {
     AXIS_X,
     AXIS_Y,
-} axis_t;
+} axis_id_t;
 
 typedef enum
 {
@@ -44,7 +44,7 @@ typedef struct
 
     movement_t movement[CNC_LINEAR_AXIS_COUNT];
 
-    axis_t axis;
+    axis_id_t axis;
     
     z_state_t z_state;
 
