@@ -3,13 +3,18 @@
 
 #include "cnc.h"
 
+typedef enum{
+    DIRECTION_POSITIVE,
+    DIRECTION_NEGATIVE
+} direction_t;
+
 typedef struct
 {
     int32_t target_position_steps[CNC_LINEAR_AXIS_COUNT];
 
-    uint32_t delta_steps[CNC_LINEAR_AXIS_COUNT];
+    int64_t delta_steps[CNC_LINEAR_AXIS_COUNT];
 
-    int8_t direction[CNC_LINEAR_AXIS_COUNT];
+    direction_t direction[CNC_LINEAR_AXIS_COUNT];
 
     uint32_t step_count;
 
@@ -20,10 +25,10 @@ typedef struct
 
 bool Motion_PlanLinear(
     const system_t *system,
+    motion_block_t *motion_block,
     float target_x_mm,
     float target_y_mm,
-    float speed_mm_s,
-    motion_block_t *motion_block
+    float speed_mm_s
 );
 
 

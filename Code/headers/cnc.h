@@ -5,7 +5,11 @@
 #include <stdbool.h>
 
 /* Cantidad de ejes de movimiento continuo */
-#define CNC_LINEAR_AXIS_COUNT  2U
+#define CNC_LINEAR_AXIS_COUNT   2U
+#define CNC_MAX_X_MM            300U
+#define CNC_MAX_Y_MM            200U
+#define CNC_MAX_SPEED_MM_S      500U
+
 
 typedef enum
 {
